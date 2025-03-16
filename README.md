@@ -12,7 +12,7 @@ Message embeds are hidden when possible.
 - [Amazon](#amazon) product links are trimmed down to the bare minimum required to visit the product page (hides link
   embed)
 - [Reddit](#reddit) links are trimmed of trackers, and replaced with rxddit
-- [Instagram](#instagram) links are embedded using ddinstagram.com, removing any link trackers (only works for reels)
+- [Instagram](#instagram) links are embedded using kkinstagram.com, removing any link trackers (only works for reels)
 - [TikTok](#tiktok) links are stripped of trackers and embedded
 
 ### Examples
@@ -76,7 +76,7 @@ https://www.instagram.com/reel/CztdYC8ryw7/?igshid=abcdefghujkl==
 Turns into
 
 ```
-https://insta.trybefore.dev/reel/CztdYC8ryw7
+https://www.kkinstagram.com/reel/CztdYC8ryw7
 ```
 
 #### TikTok
