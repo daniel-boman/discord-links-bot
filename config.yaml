@@ -9,7 +9,7 @@ replacers:
       replacement: https://www.youtube.com/watch?v=${video_id}&${query_params}
     - type: regex
       name: &amazon amazon
-      match_regex: https?://(.*)\.amazon\.(de|com|co\.uk).*/dp/(\w*)
+      match_regex: https?://(.*)\.amazon\.(de|com|co\.uk|ca).*/dp/(\w*)
       replacement: https://$1.amazon.$2/dp/$3
     - type: regex
       name: &bluesky bluesky
@@ -119,6 +119,8 @@ tests:
             want: https://www.amazon.de/dp/B09B1HMJ9Z
           - have: https://www.amazon.com/Monster-High-School-Playset/dp/B006O6F932/ref=gbph_tit_e-7_fb02_85d3d028?smid=A3CXJV2JYTL237&pf_rd_p=8e268714-ad3d-444b-b0df-d51d8825fb02&pf_rd_s=events-center-c-7&pf_rd_t=701&pf_rd_i=HTL_desktop&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=8MKN8SY6C5ZP4NC1C0RB
             want: https://www.amazon.com/dp/B006O6F932
+          - have: https://www.amazon.ca/dp/B0017JWVUU/ref=as_li_ss_tl?ie=UTF8&smid=ATVPDKIKX0DER&th=1&linkCode=sl1&tag=sec2002-20
+            want: https://www.amazon.ca/dp/B0017JWVUU
     - replacer_name: *instagram
       tests:
           - have: https://www.instagram.com/reel/CztdYC8ryw7/?igshid=abcdefghujkl==
