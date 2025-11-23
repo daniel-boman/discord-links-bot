@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/daniel-boman/discord-links-bot/refs/heads/master/schema.json
 replacers:
     - type: regex
       name: &twitter twitter
