@@ -39,7 +39,7 @@ replacers:
     name: &tiktok_vm tiktok_vm
     match_regex: https://(vm|vt)\.tiktok\.com/(?P<videoId>\w+)(?:/)?(?:\?.*)?
     destination_regex: https://(?:www\.)?tiktok\.com/(?P<username>@.+)/(?P<mediaType>photo|video)/(?P<videoId>\d+)(?:\?|[\s]|$)?
-    destination_replacement: https://www.vxtiktok.com/${username}/${mediaType}/${videoId}
+    destination_replacement: https://www.tnktok.com/${username}/${mediaType}/${videoId}
     bad_url_match: https://(?:www\.)?tiktok\.com/explore
   - type: link-follower
     name: &tiktok tiktok
