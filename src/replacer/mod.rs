@@ -295,6 +295,7 @@ mod tests {
     }
 
     #[tokio::test]
+    #[cfg(not(feature = "skip-link-followers"))]
     async fn test_replace_message() {
         let config = create_config();
         _ = env_logger::builder().is_test(true).filter_level(Debug).try_init();
@@ -304,7 +305,21 @@ https://media.discordapp.net/attachments/483348725704556557/1065345579762335915/
         let new_message = replace_message(&message, config).await.unwrap();
 
         let want = r"https://cdn.discordapp.com/attachments/483348725704556557/1065345579762335915/v12044gd0000cf3g5rrc77u1ikgnhp8g.mp4
-https://www.vxtiktok.com/@realcompmemer/video/7314546788617309471";
+https://www.tnktok.com/@realcompmemer/video/7314546788617309471";
+        info!("got new message: {}", new_message);
+
+        assert_eq!(new_message, want);
+    }
+
+    #[tokio::test]
+    async fn test_replace_message_discord() {
+        let config = create_config();
+        _ = env_logger::builder().is_test(true).filter_level(Debug).try_init();
+        let message = r#"https://media.discordapp.net/attachments/483348725704556557/1065345579762335915/v12044gd0000cf3g5rrc77u1ikgnhp8g.mp4"#.to_string();
+
+        let new_message = replace_message(&message, config).await.unwrap();
+
+        let want = r"https://cdn.discordapp.com/attachments/483348725704556557/1065345579762335915/v12044gd0000cf3g5rrc77u1ikgnhp8g.mp4";
         info!("got new message: {}", new_message);
 
         assert_eq!(new_message, want);
